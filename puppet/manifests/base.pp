@@ -14,7 +14,7 @@ class { "mysql":
  */
 class { "magento":
     /* magento version */
-    version        => "1.6.1.0",
+    version        => "1.7.0.2",
 
     /* magento database settings */
     db_username    => "magento",

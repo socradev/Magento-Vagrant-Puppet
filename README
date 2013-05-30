@@ -27,3 +27,24 @@ if you have networking problems:
 
     vagrant ssh
     sudo /etc/init.d/networking restart
+
+
+Error installing magento
+------------------------
+see http://www.magentocommerce.com/boards/viewthread/284882/
+The problem seems to be in wrong version PHP SimpleXML extension. Here’s another workaround:
+
+Replace in file app/code/core/Mage/Install/etc/config.xml (near 71th string) this
+
+<extensions>
+    <pdo_mysql/>
+</extensions>
+with this
+
+<extensions>
+    <pdo_mysql>1</pdo_mysql>
+</extensions>
+
+
+after that, run the failed command in the vagrant ssh session
+after that, from the host system, run vagrant provision
